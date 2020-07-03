@@ -12,13 +12,11 @@ driver = webdriver.Chrome('chromedriver.exe')
 driver.get("http://www.mazegenerator.net/")
 
 """Prepare and generate maze"""
-maze_width = maze_height = 50
 maze_w = driver.find_element_by_id("S1WidthTextBox")
 driver.execute_script("arguments[0].setAttribute('value', '25')", maze_w)
 maze_h = driver.find_element_by_id("S1HeightTextBox")
 driver.execute_script("arguments[0].setAttribute('value', '25')", maze_h)
-Click_On_Generate_Button = driver.find_elements_by_xpath("//input[@name='GenerateButton' and @value='Generate']")[0]
-Click_On_Generate_Button.click()
+driver.find_elements_by_xpath("//input[@name='GenerateButton' and @value='Generate']")[0].click()
 time.sleep(5)
 """Get maze image"""
 path1 = './maze/maze_for_solve.png'
