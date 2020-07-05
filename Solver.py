@@ -2,6 +2,7 @@ from maze import Maze
 from PIL import Image
 from AStar import solve
 import time
+Image.MAX_IMAGE_PIXELS = None
 
 
 def Mazer_solver(input_file, output_file):
