@@ -11,7 +11,7 @@
 - Make sure yor machine have python 3 
 - run ` pip install -r requirements.txt` for install requirements lib
 - run this app with  `py main.py`
-- ***
+***
 ## Thanks to 
 @mikepound for his code
 
