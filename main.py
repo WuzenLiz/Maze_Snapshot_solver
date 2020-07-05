@@ -5,12 +5,13 @@ from io import BytesIO
 import time
 import base64
 
-input_path = './maze/maze_for_solve.png'
-output_path = './maze/solved_maze.png'
 """Setting webdriver"""
 driver = webdriver.Chrome('chromedriver.exe')
 t0 = time.time()
 driver.get("https://keesiemeijer.github.io/maze-generator/")
+input_path = './maze/maze_for_solve.png'
+output_path = './maze/solved_maze.png'
+
 """Prepare and generate maze"""
 # maze width input
 maze_w = driver.find_element_by_xpath(
@@ -29,7 +30,7 @@ Select(driver.find_element_by_xpath(
     "//select[@id='entry' and @name='entry']")).select_by_value('vertical')
 # click on
 driver.find_elements_by_id("create-maze")[0].click()
-time.sleep(3)
+
 """Get maze image"""
 maze_img_path = driver.find_element_by_xpath("//canvas[@id='maze']")
 js = "return arguments[0].toDataURL('image/png').substring(21)"
@@ -38,6 +39,8 @@ maze_img = base64.b64decode(maze_img_to_base64)
 with open(input_path, 'wb') as f:
     f.write(maze_img)
 driver.close()
+
+
 """solve the maze"""
 Mazer_solver(input_path, output_path)
 t1 = time.time()

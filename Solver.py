@@ -37,7 +37,7 @@ def Mazer_solver(input_file, output_file):
     print("Time elapsed: ", total, "\n")
 
     print("Saving Image")
-    im = im.convert('RGB')
+    im = im.convert("RGBA")
     impixels = im.load()
 
     resultpath = [n.Position for n in result]
