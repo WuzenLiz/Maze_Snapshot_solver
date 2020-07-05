@@ -6,7 +6,7 @@ import time
 import base64
 
 """Setting webdriver"""
-driver = webdriver.Chrome('./Webdriver/chromedriver')
+driver = webdriver.Chrome('./Webdriver/chromedriver.exe')
 t0 = time.time()
 driver.get("https://keesiemeijer.github.io/maze-generator/")
 input_path = './maze/maze_for_solve.png'
