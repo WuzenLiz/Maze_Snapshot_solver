@@ -9,8 +9,8 @@ input_path = './maze/maze_for_solve.png'
 output_path = './maze/solved_maze.png'
 """Setting webdriver"""
 driver = webdriver.Chrome('chromedriver.exe')
+t0 = time.time()
 driver.get("https://keesiemeijer.github.io/maze-generator/")
-
 """Prepare and generate maze"""
 # maze width input
 maze_w = driver.find_element_by_xpath(
@@ -40,3 +40,6 @@ with open(input_path, 'wb') as f:
 driver.close()
 """solve the maze"""
 Mazer_solver(input_path, output_path)
+t1 = time.time()
+total = t1-t0
+print("Tổng thời gian thực hiện:", total, "\n")
