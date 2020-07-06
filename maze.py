@@ -5,19 +5,12 @@ class Maze:
             self.Neighbours = [None, None, None, None]
 
     def __init__(self, im):
-
-        width = im.size[0]
-        height = im.size[1]
+        width, height = im.size
         data = list(im.getdata(0))
-
-        self.start = None
-        self.end = None
-
+        self.start = self.end = None
         # Top row buffer
         topnodes = [None] * width
-
         count = 0
-
         # Start row
         for x in range(1, width - 1):
             if data[x] > 0:
@@ -25,21 +18,14 @@ class Maze:
                 topnodes[x] = self.start
                 count += 1
                 break
-
         for y in range(1, height - 1):
-            # print ("row", str(y)) # Uncomment this line to keep a track of row progress
-
             rowoffset = y * width
             rowaboveoffset = rowoffset - width
             rowbelowoffset = rowoffset + width
 
-            # Initialise previous, current and next values
-            prv = False
-            cur = False
+            prv = cur = False
             nxt = data[rowoffset + 1] > 0
-
             leftnode = None
-
             for x in range(1, width - 1):
                 # Move prev, current and next onwards. This way we read from the image once per pixel, marginal optimisation
                 prv = cur
@@ -78,7 +64,6 @@ class Maze:
                         # WALL PATH WALL
                         # Create node only if in dead end
                         if (data[rowaboveoffset + x] == 0) or (data[rowbelowoffset + x] == 0):
-                            #print ("Create Node in dead end")
                             n = Maze.Node((y, x))
 
                 # If node isn't none, we can assume we can connect N-S somewhere

@@ -51,6 +51,16 @@ def Get_image(width, height):
     im = Image.open(BytesIO(maze_img))
     im.save(input_path, quality=100, subsampling=0)
     driver.close()
+    t0 = time.time()
+
+    """solve the maze"""
+    Mazer_solver(input_path, output_path)
+    # create_compare_image(input_path, output_path, compare_path)
+    # Image.open(compare_path).show()
+    """Time count"""
+    t1 = time.time()
+    total = t1-t0
+    print("Done in:", total, "\n")
 
 
 def main(argv):
@@ -59,12 +69,12 @@ def main(argv):
         opts, args = getopt.getopt(
             argv, "w:h:?", ["Width=", "Height=", "width=", "height="])
     except getopt.GetoptError:
-        print('main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
+        print('py main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-?':
             print(
-                'main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
+                'py main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
             print("Made by Hoang Anh Nguyen - 2020")
             sys.exit()
         elif opt in ("-w", "--Width", "--width"):
@@ -73,16 +83,7 @@ def main(argv):
             h = arg
         elif opt == '':
             w = h = 40
-    t0 = time.time()
     Get_image(w, h)
-    """solve the maze"""
-    Mazer_solver(input_path, output_path)
-    create_compare_image(input_path, output_path, compare_path)
-    Image.open(compare_path).show()
-    """Time count"""
-    t1 = time.time()
-    total = t1-t0
-    print("Done in:", total, "\n")
 
 
 if __name__ == "__main__":

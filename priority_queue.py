@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from FibonacciHeap import FibHeap
+from Fibonacci_Heap import FibHeap
 
 
 class PriorityQueue():
