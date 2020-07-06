@@ -1,11 +1,13 @@
 # Maze_solver
 ![Maze_Solver](https://github.com/macgia99/Maze_Snapshot_solver/workflows/Maze_Solver/badge.svg?branch=master)
-
 #A-star-Algorithm #Image-processing #Webdriver 
 ***
 ## Main idea
     Use webdriver for get maze image from https://keesiemeijer.github.io/maze-generator/
     And solve it with A star Algorithm
+***
+## Demo run
+[![Demo run](https://img.youtube.com/vi/iawKUrEQGT4/0.jpg)](https://www.youtube.com/watch?v=iawKUrEQGT4 "Demo run")
 ***
 ## Install and Usage
 - Make sure yor machine have python 3 
