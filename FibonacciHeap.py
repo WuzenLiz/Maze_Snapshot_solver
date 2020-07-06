@@ -160,8 +160,6 @@ class FibHeap:
 
     def decreasekey(self, node, newkey):
         if newkey > node.key:
-            #import code
-            #code.interact(local=locals())
             raise AssertionError("Cannot decrease a key to a greater value")
         elif newkey == node.key:
             return
@@ -180,7 +178,6 @@ class FibHeap:
         while True:
             parent.removechild(node)
             self._insertnode(node)
-
             if parent.parent == None:
                 break
             elif parent.mark == False:

@@ -37,7 +37,7 @@ def Mazer_solver(input_file, output_file):
     print("Time elapsed: ", total, "\n")
 
     print("Saving Image")
-    im = im.convert("RGBA")
+    im = im.convert("RGB")
     impixels = im.load()
 
     resultpath = [n.Position for n in result]
@@ -60,5 +60,14 @@ def Mazer_solver(input_file, output_file):
             # Xs equal - vertical line
             for y in range(min(a[0], b[0]), max(a[0], b[0]) + 1):
                 impixels[a[1], y] = px
+    im.save(output_file, quality=100, subsampling=0)
 
-    im.save(output_file)
+
+def resize_for_better_look(input_file):
+    im = Image.open(input_file)
+    width, height = im.size
+    newsize = (width*4, height*4)
+    im = im.convert('RGBA')
+    im = im.resize(newsize, Image.ANTIALIAS)
+    im.save(input_file, quality=100, subsampling=0)
+    im.show()
