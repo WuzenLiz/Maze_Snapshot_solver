@@ -59,11 +59,13 @@ def main(argv):
         opts, args = getopt.getopt(
             argv, "w:h:?", ["Width=", "Height=", "width=", "height="])
     except getopt.GetoptError:
-        print('get_image.py -w <Maze Width> -h <Maze Height>')
+        print('main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-?':
-            print('get_image.py -w <Maze Width> -h <Maze Height>')
+            print(
+                'main.py -w <Maze Width : default = 40, max = 200> -h <Maze Height : default = 40, max = 200>')
+            print("Made by Hoang Anh Nguyen - 2020")
             sys.exit()
         elif opt in ("-w", "--Width", "--width"):
             w = arg
