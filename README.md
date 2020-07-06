@@ -7,11 +7,11 @@
     And solve it with A star Algorithm
 ***
 ## Demo run
-[![Demo run](https://img.youtube.com/vi/iawKUrEQGT4/0.jpg)](https://www.youtube.com/watch?v=iawKUrEQGT4 "Demo run")
+[![Demo run](https://img.youtube.com/vi/eCJKwK85rIA/0.jpg)](https://www.youtube.com/watch?v=eCJKwK85rIA "Demo run")
 ***
 ## Install and Usage
-- Make sure yor machine have python 3 
+- Make sure your machine have python 3 
 - run ` pip install -r requirements.txt` for install requirements lib
-- run this app with  `py main.py`
+- run this app with  `py main.py -w <Maze Width, max is 200> -h <Maze Height, max is 200>`
 ***
 
