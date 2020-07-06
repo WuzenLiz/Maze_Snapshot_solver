@@ -56,11 +56,11 @@ def Get_image(width, height):
 def main(argv):
     h = w = 40
     try:
-        opts = getopt.getopt(
+        opts, args = getopt.getopt(
             argv, "w:h:?", ["Width=", "Height=", "width=", "height="])
     except getopt.GetoptError:
         print('get_image.py -w <Maze Width> -h <Maze Height>')
-    sys.exit(2)
+        sys.exit(2)
     for opt, arg in opts:
         if opt == '-?':
             print('get_image.py -w <Maze Width> -h <Maze Height>')
