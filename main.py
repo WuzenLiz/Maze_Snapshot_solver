@@ -55,8 +55,8 @@ def Get_image(width, height):
 
     """solve the maze"""
     Mazer_solver(input_path, output_path)
-    # create_compare_image(input_path, output_path, compare_path)
-    # Image.open(compare_path).show()
+    create_compare_image(input_path, output_path, compare_path)
+    Image.open(compare_path).show()
     """Time count"""
     t1 = time.time()
     total = t1-t0
