@@ -64,6 +64,15 @@ def Get_image(width, height):
 
 
 def main(argv):
+    a = 1+1 
+    print(a, '\n')
+    
+    a = 1+2 
+    print(a, '\n')
+
+    a = 1+3 
+    print(a, '\n')
+
     h = w = 40
     try:
         opts, args = getopt.getopt(
